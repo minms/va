@@ -32,7 +32,6 @@ async function generate(dir, files, base = '', rootOptions = {}) {
 }
 
 module.exports = (api, options, rootOptions) => {
-
   // 安装一些基础公共库
   api.extendPackage({
     dependencies: {
@@ -42,8 +41,9 @@ module.exports = (api, options, rootOptions) => {
 
   // 公共基础目录和文件
   api.render(async function (files) {
-    console.log(files)
+    console.log(Object.keys(files))
     Object.keys(files).forEach(name => {
+      console.log(name)
       delete files[name]
     })
     await generate(path.resolve(__dirname, './template/default/src'), files, 'src', rootOptions)
