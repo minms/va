@@ -41,9 +41,9 @@ module.exports = (api, options, rootOptions) => {
 
   // 公共基础目录和文件
   api.render(async function (files) {
-    console.log(Object.keys(files))
     Object.keys(files).forEach(name => {
-      console.log(name)
+      if (['vue.config.js'].includes(name)) return
+
       delete files[name]
     })
     await generate(path.resolve(__dirname, './template/default/src'), files, 'src', rootOptions)
