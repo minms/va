@@ -42,6 +42,7 @@ module.exports = (api, options, rootOptions) => {
 
   // 公共基础目录和文件
   api.render(async function (files) {
+    console.log(files)
     Object.keys(files).forEach(name => {
       delete files[name]
     })
