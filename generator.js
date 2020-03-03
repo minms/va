@@ -35,7 +35,10 @@ module.exports = (api, options, rootOptions) => {
   // 安装一些基础公共库
   api.extendPackage({
     dependencies: {
-      "va-core": "^1.0.0"
+      "va-core": "^3.6.4"
+    },
+    devDependencies: {
+      "webpack": "^4.41.6"
     }
   })
 
